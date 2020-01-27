@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2887A84A23D9D48B006927AD /* SeatingChartPickMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatingChartPickMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2887A84A23D9D48B006927AD /* Pick Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pick Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2887A84D23D9D48B006927AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2887A84F23D9D48B006927AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2887A85423D9D48B006927AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		2887A84B23D9D48B006927AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2887A84A23D9D48B006927AD /* SeatingChartPickMe.app */,
+				2887A84A23D9D48B006927AD /* Pick Me.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = SeatingChartPickMe;
 			productName = SeatingChartPickMe;
-			productReference = 2887A84A23D9D48B006927AD /* SeatingChartPickMe.app */;
+			productReference = 2887A84A23D9D48B006927AD /* Pick Me.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -304,7 +304,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Derek.SeatingChartPickMe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pick Me";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Derek.SeatingChartPickMe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pick Me";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

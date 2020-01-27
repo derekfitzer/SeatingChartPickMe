@@ -16,7 +16,8 @@ class SeatingChartViewController: UIViewController {
     var purple = [String]()
     var count = 0
     
-    var names = ["Grace", "Christian", "Eric", "Cameron S.", "James", "Gage", "Sarah", "Cameron B.", "Nick", "Daniel", "Preston", "Mr. Fitzer", "Di", "Jay"]
+    var namesMain = ["Grace", "Christian", "Eric", "Cameron S.", "James", "Gage", "Sarah", "Cameron B.", "Nick", "Daniel", "Preston", "Mr. Fitzer", "Di", "Jay"]
+    var names = [String]()
     
     @IBOutlet var namesText: [UITextView]!
     
@@ -32,6 +33,7 @@ class SeatingChartViewController: UIViewController {
     }
     
     @IBAction func createChart(_ sender: UIButton) {
+        names = namesMain
         names.shuffle()
         genName3(output: 0)
         genName3(output: 1)

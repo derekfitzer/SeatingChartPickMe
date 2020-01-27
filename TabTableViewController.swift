@@ -6,11 +6,17 @@
 //  Copyright © 2020 Derek Fitzer. All rights reserved.
 //
 
+// IDEA: press and hold will fire an alert for NOTE e.g. on phone, good job, needs help
+
 import UIKit
 
 class TabTableViewController: UITableViewController {
+    
+   // let defaults = UserDefaults.standard
+    
+    var sample = [[String]]()
         
-    var sample = [["Grace","0","0"],["Christian","0","0"],["Eric","0","0"],["Cameron S.","0","0"],["James","0","0"],["Gage","0","0"],["Sarah","0","0"],["Cameron B.","0","0"],["Nick","0","0"],["Daniel","0","0"],["Preston","0","0"],["Di","0","0"],["Jay","0","0"]]
+    // var sample = [["Grace","0","0"],["Christian","0","0"],["Eric","0","0"],["Cameron S.","0","0"],["James","0","0"],["Gage","0","0"],["Sarah","0","0"],["Cameron B.","0","0"],["Nick","0","0"],["Daniel","0","0"],["Preston","0","0"],["Di","0","0"],["Jay","0","0"]]
     
 //        var sample = [["derek","0"],["mona","1"],["mark","2"],["jen","3"]]
     
@@ -19,8 +25,12 @@ class TabTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
+        let defaults = UserDefaults.standard
+        if let storedSample = defaults.array(forKey: "names") {
+            sample = storedSample as! [[String]]
+        } else {
+            sample = [["Grace","0","0"],["Christian","0","0"],["Eric","0","0"],["Cameron S.","0","0"],["James","0","0"],["Gage","0","0"],["Sarah","0","0"],["Cameron B.","0","0"],["Nick","0","0"],["Daniel","0","0"],["Preston","0","0"],["Di","0","0"],["Jay","0","0"]]
+        }
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 //        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -48,8 +58,8 @@ class TabTableViewController: UITableViewController {
         let move = sample[indexPath.row]
         sample.remove(at: indexPath.row)
         sample.append(move)
-        
-        
+        let defaults = UserDefaults.standard
+        defaults.set(sample, forKey: "names")
         tableView.reloadData()
     }
     
@@ -63,6 +73,8 @@ class TabTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "  Current Round: \(detCurrent) Total: \(detTotal)"
         let setColor = Int(sample[indexPath.row][1])
         switch setColor {
+        case 0:
+            cell.contentView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         case 1:
             cell.contentView.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.1)
         case 2:
@@ -132,5 +144,12 @@ class TabTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func clear(_ sender: UIBarButtonItem) {
+        for i in(0..<sample.count){
+            sample[i][1] = "0"
+        }
+        sample.shuffle()
+        self.tableView.reloadData()
+    }
+    
 }
